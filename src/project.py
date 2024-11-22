@@ -4,9 +4,14 @@ import random
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
-def main():
-    ...
-
+class Ball:
+    def __init__(self, x, y, dx, dy, radius, color):
+        self.x = x
+        self.y = y
+        self.dx = dx
+        self.dy = dy
+        self.radius = radius
+        self.color = color
 
 def function_1():
     ...
