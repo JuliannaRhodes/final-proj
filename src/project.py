@@ -13,6 +13,15 @@ class Ball:
         self.radius = radius
         self.color = color
 
+    def move(self):
+        self.x += self.dx
+        self.y += self.dy
+
+        # Bounce off the top and bottom walls
+        if self.y - self.radius < 0 or self.y + self.radius > SCREEN_HEIGHT:
+            self.dy *= -1
+
+
 def function_1():
     ...
 
