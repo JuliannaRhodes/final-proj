@@ -20,7 +20,9 @@ class Ball:
         # Bounce off the top and bottom walls
         if self.y - self.radius < 0 or self.y + self.radius > SCREEN_HEIGHT:
             self.dy *= -1
-
+    
+    def draw(self, screen):
+        pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.radius)
 
 def function_1():
     ...
