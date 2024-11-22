@@ -1,4 +1,4 @@
-# Pong 2.0
+# Pongz
 
 ## Demo
 Demo Video: <URL>
