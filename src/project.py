@@ -40,7 +40,10 @@ class Paddle:
         elif direction == "down" and self.y + self.height < SCREEN_HEIGHT:
             self.y += self.speed
 
+    def draw(self, screen):
+        pygame.draw.rect(screen, self.color, (self.x, self.y, self.width, self.height))
 
+        
 
 def function_1():
     ...
