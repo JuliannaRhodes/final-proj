@@ -53,5 +53,16 @@ def add_ball(balls, timer):
         timer += 15000  # Add 15 seconds (15000 ms) to the timer
     return timer
 
+def main():
+    pygame.init()
+
+    # Initialize screen and clock
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    pygame.display.set_caption("Pongz")
+    clock = pygame.time.Clock()
+
+   
+
+
 if __name__ == "__main__":
     main()
