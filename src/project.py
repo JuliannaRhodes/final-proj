@@ -43,19 +43,15 @@ class Paddle:
     def draw(self, screen):
         pygame.draw.rect(screen, self.color, (self.x, self.y, self.width, self.height))
 
-        
-
-def function_1():
-    ...
-
-
-def function_2():
-    ...
-
-
-def function_n():
-    ...
-
+def add_ball(balls, timer):
+    # Check if the current time has exceeded the timer
+    if pygame.time.get_ticks() > timer:
+        dx = random.choice([-3, 3])  # Random horizontal direction
+        dy = random.choice([-3, 3])  # Random vertical direction
+        new_ball = Ball(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, dx, dy, 10, (255, 255, 255))
+        balls.append(new_ball)
+        timer += 15000  # Add 15 seconds (15000 ms) to the timer
+    return timer
 
 if __name__ == "__main__":
     main()
