@@ -61,7 +61,21 @@ def main():
     pygame.display.set_caption("Pongz")
     clock = pygame.time.Clock()
 
-   
+    # Colors
+    BLACK = (0, 0, 0)
+    WHITE = (255, 255, 255)
+
+    # Initialize objects
+    left_paddle = Paddle(50, SCREEN_HEIGHT // 2 - 60, 10, 120, WHITE)
+    right_paddle = Paddle(SCREEN_WIDTH - 60, SCREEN_HEIGHT // 2 - 60, 10, 120, WHITE)
+    balls = [Ball(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, 3, 3, 10, WHITE)]
+
+    # Initialize scores
+    left_score = 0
+    right_score = 0
+
+    # Timer for adding balls
+    ball_timer = pygame.time.get_ticks() + 5000
 
 
 if __name__ == "__main__":
