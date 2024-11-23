@@ -33,6 +33,13 @@ class Paddle:
         self.height = height
         self.color = color
         self.speed = 5
+    
+    def move(self, direction):
+        if direction == "up" and self.y > 0:
+            self.y -= self.speed
+        elif direction == "down" and self.y + self.height < SCREEN_HEIGHT:
+            self.y += self.speed
+
 
 
 def function_1():
