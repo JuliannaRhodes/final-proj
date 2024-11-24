@@ -66,18 +66,16 @@ def main():
     WHITE = (255, 255, 255)
 
     # Initialize objects
-    left_paddle = Paddle(50, SCREEN_HEIGHT // 2 - 60, 10, 120, WHITE)
-    right_paddle = Paddle(SCREEN_WIDTH - 60, SCREEN_HEIGHT // 2 - 60, 10, 120, WHITE)
+    player_paddle = Paddle(50, SCREEN_HEIGHT // 2 - 60, 10, 120, WHITE)
     balls = [Ball(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, 3, 3, 10, WHITE)]
 
-    # Initialize scores
-    left_score = 0
-    right_score = 0
+    # Initialize score
+    score = 10  # Player starts with 10 points
 
     # Timer for adding balls
-    ball_timer = pygame.time.get_ticks() + 5000
+    ball_timer = pygame.time.get_ticks() + 15000
 
-     # Sound effects
+    # Sound effects
     hit_sound = pygame.mixer.Sound("sounds/paddle_hit.ogg")
     score_sound = pygame.mixer.Sound("sounds/score.wav")
 
