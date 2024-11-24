@@ -76,7 +76,7 @@ def main():
     ball_timer = pygame.time.get_ticks() + 15000
 
     # Sound effects
-    hit_sound = pygame.mixer.Sound("sounds/paddle_hit.wav")
+    hit_sound = pygame.mixer.Sound("sounds/hit.wav")
     score_sound = pygame.mixer.Sound("sounds/score.wav")
 
     running = True
@@ -97,6 +97,18 @@ def main():
         for ball in balls:
             ball.move()
             ball.draw(screen)
+
+        # Collision with player paddle
+            if (
+                ball.x - ball.radius < player_paddle.x + player_paddle.width
+                and player_paddle.y < ball.y < player_paddle.y + player_paddle.height
+            ):
+                ball.dx *= -1
+                hit_sound.play()
+
+        # Collision with the right wall
+            if ball.x + ball.radius > SCREEN_WIDTH:
+                ball.dx *= -1
 
 
 
