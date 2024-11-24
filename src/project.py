@@ -120,7 +120,11 @@ def main():
         # Add a new ball every 15 seconds
         ball_timer = add_ball(balls, ball_timer)
 
-        
+        # Draw paddle and score
+        player_paddle.draw(screen)
+        font = pygame.font.SysFont(None, 36)
+        score_text = font.render(f"Score: {score}", True, WHITE)
+        screen.blit(score_text, (20, 20))
 
         
 
