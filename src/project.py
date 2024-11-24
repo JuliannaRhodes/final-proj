@@ -77,6 +77,14 @@ def main():
     # Timer for adding balls
     ball_timer = pygame.time.get_ticks() + 5000
 
+    running = True
+    while running:
+        screen.fill(BLACK)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+
 
 if __name__ == "__main__":
     main()
