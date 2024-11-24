@@ -77,6 +77,10 @@ def main():
     # Timer for adding balls
     ball_timer = pygame.time.get_ticks() + 5000
 
+     # Sound effects
+    hit_sound = pygame.mixer.Sound("sounds/paddle_hit.ogg")
+    score_sound = pygame.mixer.Sound("sounds/score.wav")
+
     running = True
     while running:
         screen.fill(BLACK)
