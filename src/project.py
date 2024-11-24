@@ -70,7 +70,7 @@ def main():
     balls = [Ball(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, 3, 3, 10, WHITE)]
 
     # Initialize score
-    score = 10  # Player starts with 10 points
+    score = 0  # Player starts with 0 points
 
     # Timer for adding balls
     ball_timer = pygame.time.get_ticks() + 15000
@@ -104,15 +104,25 @@ def main():
                 and player_paddle.y < ball.y < player_paddle.y + player_paddle.height
             ):
                 ball.dx *= -1
-                hit_sound.play()
+                score += 1  # Increment score for a successful paddle hit
+                score_sound.play()
 
         # Collision with the right wall
             if ball.x + ball.radius > SCREEN_WIDTH:
                 ball.dx *= -1
+        
+        # Lose condition - Ball escapes past the player
+            if ball.x < 0:
+                hit_sound.play()  # Play hit sound
+                running = False  # End the game
+                break
 
+        # Add a new ball every 15 seconds
+        ball_timer = add_ball(balls, ball_timer)
 
+        
 
-
+        
 
 if __name__ == "__main__":
     main()
