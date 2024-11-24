@@ -48,7 +48,12 @@ def add_ball(balls, timer):
     if pygame.time.get_ticks() > timer:
         dx = random.choice([-3, 3])  # Random horizontal direction
         dy = random.choice([-3, 3])  # Random vertical direction
-        new_ball = Ball(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, dx, dy, 10, (255, 255, 255))
+        random_color = (
+            random.randint(50, 255),  # Avoid very dark colors
+            random.randint(50, 255),
+            random.randint(50, 255),
+        )
+        new_ball = Ball(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, dx, dy, 10, random_color)
         balls.append(new_ball)
         timer += 15000  # Add 15 seconds (15000 ms) to the timer
     return timer
