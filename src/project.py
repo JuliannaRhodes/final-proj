@@ -126,6 +126,18 @@ def main():
         score_text = font.render(f"Score: {score}", True, WHITE)
         screen.blit(score_text, (20, 20))
 
+        # Game over message
+        if not running:
+            game_over_text = font.render("Game Over!", True, WHITE)
+            screen.blit(game_over_text, (SCREEN_WIDTH // 2 - 80, SCREEN_HEIGHT // 2))
+            pygame.display.flip()
+            pygame.time.delay(3000)
+
+        pygame.display.flip()
+        clock.tick(60)
+
+    pygame.quit()
+
         
 
 if __name__ == "__main__":
