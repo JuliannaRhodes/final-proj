@@ -86,6 +86,17 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
 
+        # Paddle movement
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_w]:
+            player_paddle.move("up")
+        if keys[pygame.K_s]:
+            player_paddle.move("down")
+
+        # Ball movement and collision
+        for ball in balls:
+            ball.move()
+            ball.draw(screen)
 
 
 
