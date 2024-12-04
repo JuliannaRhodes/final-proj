@@ -1,7 +1,7 @@
 # Pongz
 
 ## Demo
-Demo Video: <URL>
+Demo Video: <https://youtu.be/lbn-nQCFVqw>
 
 ## GitHub Repository
 GitHub Repo: <https://github.com/JuliannaRhodes/final-proj>
